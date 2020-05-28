@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-    var viewModel: EmojiMemoryGame
+    @ObservedObject var viewModel: EmojiMemoryGame
 
     var body: some View {
         HStack {
@@ -23,7 +23,6 @@ struct EmojiMemoryGameView: View {
         }
         .padding()
         .foregroundColor(Color.orange)
-        .font(viewModel.cards.count == 5 ? .body : .largeTitle)
     }
 }
 
@@ -33,15 +32,32 @@ struct CardView: View {
     var card: MemoryGame<String>.Card
 
     var body: some View {
+        GeometryReader { geometry in
+            self.body(for: geometry.size)
+        }
+    }
+
+    func body(for size: CGSize) -> some View {
         ZStack {
-            if card.isFaceUp {
-                RoundedRectangle(cornerRadius: 10).fill(Color.white)
-                RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 3)
-                Text(card.content)
+            if self.card.isFaceUp {
+                RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.white)
+                RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: self.edgeLineWidth)
+                Text(self.card.content)
             } else {
-                RoundedRectangle(cornerRadius: 10).fill(Color.orange)
+                RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.orange)
             }
         }
+        .font(.system(size: fontSize(for: size)))
+    }
+
+    // MARK: - Drawing Constants
+
+    let cornerRadius: CGFloat = 10
+    let edgeLineWidth: CGFloat = 3
+    let fontScaleFactor: CGFloat = 0.75
+
+    func fontSize(for size: CGSize) -> CGFloat {
+        min(size.width, size.height) * fontScaleFactor
     }
 }
 

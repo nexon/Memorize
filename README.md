@@ -16,10 +16,10 @@ The material in this course was not developed with the involvement of, nor was i
 
 ## Lectures
 
-[Lecture 1](https://youtu.be/jbtqIBpUG7g)
-[Lecture 2](https://youtu.be/4GjXq2Sr55Q)
-[Lecture 3](https://www.youtube.com/watch?v=SIYdYpPXil4&list=PLpGHT1n4-mAtTj9oywMWoBx0dCGd51_yG&index=3)
-[Lecture 4](https://www.youtube.com/watch?v=eHEeWzFP6O4&list=PLpGHT1n4-mAtTj9oywMWoBx0dCGd51_yG&index=4)
+* [Lecture 1](https://youtu.be/jbtqIBpUG7g)
+* [Lecture 2](https://youtu.be/4GjXq2Sr55Q)
+* [Lecture 3](https://www.youtube.com/watch?v=SIYdYpPXil4&list=PLpGHT1n4-mAtTj9oywMWoBx0dCGd51_yG&index=3)
+* [Lecture 4](https://www.youtube.com/watch?v=eHEeWzFP6O4&list=PLpGHT1n4-mAtTj9oywMWoBx0dCGd51_yG&index=4)
 
 
 
