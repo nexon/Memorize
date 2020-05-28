@@ -18,6 +18,7 @@ struct ContentView: View {
                     .onTapGesture {
                         self.viewModel.choose(card: card)
                 }
+                .aspectRatio(CGSize(width: 2, height: 3), contentMode: .fit)
             }
         }
         .padding()
