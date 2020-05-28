@@ -12,8 +12,12 @@ struct EmojiMemoryGame {
     var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
 
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👻","🎃","🕷","😀"]
-        return MemoryGame<String>(numberOfPairsOfCards: emojis.count) { emojis[$0] }
+        let emojis = ["👻","🎃","🕷","😀", "😉"]
+
+        let shuffledEmojis = emojis
+            .prefix(upTo: Int.random(in: 2...5))
+
+        return MemoryGame<String>(numberOfPairsOfCards: shuffledEmojis.count) { shuffledEmojis[$0] }
     }
 
     // MARK: - Access to the Model
